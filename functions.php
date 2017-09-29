@@ -15,6 +15,9 @@
  */
 
 /** Various clean up functions */
+require_once( 'library/JaredPress/main-functions.php' );
+
+/** Various clean up functions */
 require_once( 'library/cleanup.php' );
 
 /** Required for Foundation to work properly */
