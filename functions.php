@@ -14,6 +14,10 @@
  * @since FoundationPress 1.0.0
  */
 
+
+/** Create widget areas in sidebar and footer */
+require_once( 'library/modified/widget-areas.php' );
+
 /** Various clean up functions */
 require_once( 'library/JaredPress/main-functions.php' );
 
@@ -32,9 +36,6 @@ require_once( 'library/navigation.php' );
 /** Add menu walkers for top-bar and off-canvas */
 require_once( 'library/class-foundationpress-top-bar-walker.php' );
 require_once( 'library/class-foundationpress-mobile-walker.php' );
-
-/** Create widget areas in sidebar and footer */
-require_once( 'library/widget-areas.php' );
 
 /** Return entry meta information for posts */
 require_once( 'library/entry-meta.php' );
