@@ -8,7 +8,7 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<?php //get_template_part( 'template-parts/featured-image' ); ?>
 
 <div class="main-wrap" role="main">
 
@@ -16,8 +16,11 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
-			<?php foundationpress_entry_meta(); ?>
+			<h1 class="entry-title close"><?php the_title(); ?></h1>
+			<?php display_featured_media('large');?>
+			<br>
+			<span class="entry-date"><?php echo get_the_date(); ?></span>
+			<?php //foundationpress_entry_meta(); ?>
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">

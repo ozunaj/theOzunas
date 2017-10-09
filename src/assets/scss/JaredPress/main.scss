@@ -51,6 +51,12 @@ h1, h2, h3, h4 , h5, h6{
     font-family: 'Quicksand', sans-serif;
     margin-bottom:1.5em;
 }
+h3 > a:hover {
+    text-decoration: underline;
+}
+.entry-title {
+    margin-bottom: .5em;
+}
 .headline{
 	font-size: 8em; 
 	line-height:1;
@@ -92,7 +98,7 @@ h1, h2, h3, h4 , h5, h6{
 	}
 }
 .extra-roomy{
-	padding: 400px 0em;
+	padding: 15% 0em;
 
 	@media screen and (max-width:$break-small){
 		padding: 2em 0em;
