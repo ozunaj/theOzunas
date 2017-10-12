@@ -47,9 +47,21 @@ $dark-green: #022A35;
 .fancy{
     font-family: 'Pacifico', cursive;
 }
-h1, h2, h3, h4 , h5, h6{
+
+h1, h2 {
     font-family: 'Quicksand', sans-serif;
     margin-bottom:1.5em;
+}
+h1, h2, h3, h4 , h5, h6{
+    font-family: 'Quicksand', sans-serif;
+}	
+@media screen and (max-width:$break-small){
+	h1 {font-size: 2em}
+	h2 {font-size: 1.75em}
+	h3 {font-size: 1.6em}
+	h4 {font-size: 1.4em}
+	h5 {font-size: 1.25em}
+	h6 {font-size: 1.15em}
 }
 h3 > a:hover {
     text-decoration: underline;
@@ -118,6 +130,10 @@ h3 > a:hover {
 }
 .far{
 	margin-bottom:1.5em;
+
+	@media screen and (max-width:$break-small){
+	margin-bottom:1em;
+	}
 }
 
 /*
@@ -126,7 +142,7 @@ h3 > a:hover {
 *
 */
 
-.inverse-button-light { 
+.outline-button-white { 
 	@include button; 
 	color:white;
 	background-color:transparent;
@@ -135,9 +151,22 @@ h3 > a:hover {
 	border: 4px solid white;
 	font-weight:600;
 }
-.inverse-button-light:hover, .inverse-button-light:focus { 
+.outline-button-white:hover, .outline-button-white:focus { 
 	color:black;
 	background-color:white;
+}
+.outline-button-black { 
+	@include button; 
+	color:black;
+	background-color:transparent;
+	border:1px solid black;
+	margin-top:1em;
+	border: 4px solid black;
+	font-weight:600;
+}
+.outline-button-black:hover, .outline-button-black:focus { 
+	color:white;
+	background-color:black;
 }
 .large {
     min-width:300px;
@@ -150,15 +179,28 @@ hr.light{
 }
 //These will mixin foundations buttons
 .mega-icon{
-	font-size:4em;
+	font-size:5em;
 }
 .med-icon{
 	font-size:2.5em;
 }
 .icon-container{
-	text-align: center;
 	vertical-align: middle;
-	line-height: 1;
+	line-height:5em; 
+	text-align:left;
+
+	@media screen and (max-width:$break-small){
+		text-align: center;
+	}
+
+}
+
+.center-on-mobile{
+	//
+
+		@media screen and (max-width:$break-small){
+		text-align: center;
+	}
 }
 
 .entry-date{
@@ -170,6 +212,9 @@ hr.light{
 	color:white;
     font-family: 'Quicksand', sans-serif;
 
+    @media screen and (max-width:$break-small){
+	font-size:2em;
+	}
 }
 
 /*
@@ -185,19 +230,33 @@ hr.light{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    
+    @media screen and (max-width:$break-small){
+		background:linear-gradient($blue-tint, $blue-tint), url('../../../src/assets/images/core/computer-mobile.jpg');
+
+	}
 }
 .parallax-lights{
-	background:linear-gradient($blue-tint, $blue-tint), url('../../../src/assets/images/core/lights.jpg');
+	background:linear-gradient($blue-tint, $blue-tint), url('../../../src/assets/images/core/keyboard.jpg');
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media screen and (max-width:$break-small){
+		background:linear-gradient($blue-tint, $blue-tint), url('../../../src/assets/images/core/keyboard-mobile.jpg');
+		background-attachment: static;
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
 }
 
-
-
-
+.grid-margin-x {
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
 
 
 
