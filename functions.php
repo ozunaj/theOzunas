@@ -15,11 +15,14 @@
  */
 
 
+/** Custom Functions added to theme */
+require_once( 'library/JaredPress/main-functions.php' );
+require_once( 'library/JaredPress/page-templates-metaboxes.php' );
+require_once( 'library/JaredPress/second-editor.php' );
+
+
 /** Create widget areas in sidebar and footer */
 require_once( 'library/modified/widget-areas.php' );
-
-/** Various clean up functions */
-require_once( 'library/JaredPress/main-functions.php' );
 
 /** Various clean up functions */
 require_once( 'library/cleanup.php' );
