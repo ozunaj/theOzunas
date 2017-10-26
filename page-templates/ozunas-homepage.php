@@ -6,7 +6,7 @@ get_header(); ?>
 <?php $second_editor = get_post_meta($post->ID, WYSIWYG_META_KEY, true);?>
 <?php $slideshow_shortcode = get_post_meta( get_the_ID(), 'slideshow-shortcode', true ); ?>
 
-<section class="">
+<section class="roomy">
 	<?php echo do_shortcode($slideshow_shortcode); ?>
 </section>
 <section id="about">
@@ -52,7 +52,7 @@ get_header(); ?>
 	<div class="grid-container roomy">
 		<div class="grid-x grid-margin-x">
 			<div class="cell center">
-				<span class="drop-quote">Working with Jared and Rebecca was one of the most rewarding experiences I’ve had during our wedding preparation process. - Emily</span>
+				<span class="drop-quote">"Working with Jared and Rebecca was one of the most rewarding experiences I’ve had during our wedding preparation process." - Emily</span>
 			</div>
 		</div>
 	</div>
