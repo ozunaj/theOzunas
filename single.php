@@ -17,7 +17,7 @@ get_header(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
 			<h1 class="entry-title close"><?php the_title(); ?></h1>
-			<?php display_featured_media('large');?>
+			<?php //display_featured_media('full');?>
 			<br>
 			<span class="entry-date"><?php echo get_the_date(); ?></span>
 			<?php //foundationpress_entry_meta(); ?>

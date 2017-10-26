@@ -119,7 +119,7 @@ if( !empty( $meta_subheader ) ) {
 *
 **/
  
- function salud_register_twitter_metabox() 
+ function jmo_slideshow_shortcode_metabox() 
 {
     global $post;
 
@@ -127,45 +127,35 @@ if( !empty( $meta_subheader ) ) {
     {
         $pageTemplate = get_post_meta($post->ID, '_wp_page_template', true);
 
-        if($pageTemplate == 'page-templates/news.php' || $pageTemplate == 'page-templates/tweetchat-landing.php' )
+        if($pageTemplate == 'page-templates/ozunas-homepage.php' )
         {
         add_meta_box( 
-        'twitter-meta',
-        __( 'Tweetchat Event Information', 'textdomain' ),
-        'salud_twitter_meta_callback',
+        'ozuna_homepage',
+        __( 'Slideshow Shortcode', '' ),
+        'slide_show_shortcode_callback',
         'page', 
         'normal' 
         );
         }
     }
 }
-add_action( 'add_meta_boxes', 'salud_register_twitter_metabox' );
+add_action( 'add_meta_boxes', 'jmo_slideshow_shortcode_metabox' );
 
 /**
  * Meta box display callback.
  *
  * @param WP_Post $post Current post object.
  */
-function salud_twitter_meta_callback( $post ) {
+function slide_show_shortcode_callback( $post ) {
     // Display code/markup goes here. Don't forget to include nonces!
-    wp_nonce_field( basename( __FILE__ ), 'utPress_nonce' );
-    $salud_twitter_meta = get_post_meta( $post->ID );
+    wp_nonce_field( basename( __FILE__ ), 'jmo_nonce' );
+    $jmo_slideshow_shortcode = get_post_meta( $post->ID );
     ?>
     <span>To get rid of the text below, delete the following boxes and update the post.</span>
     <p>
-        <label for="twitter-text" class=""><?php _e( '<b>Tweetchat Title:</b>', 'salud-textdomain' )?></label><br>
+        <label for="slideshow-shortcode" class=""><?php _e( '<b>Slideshow Shortcode</b>', 'textdomain' )?></label><br>
         <br>
-        <textarea cols="100" rows="2" name="twitter-text" id="twitter-text"><?php if ( isset ( $salud_twitter_meta['twitter-text'] ) ) echo $salud_twitter_meta['twitter-text'][0]; ?></textarea>
-    </p>
-    <p>
-        <label for="twitter-date" class=""><?php _e( '<b>Tweetchat Date:</b>', 'salud-textdomain' )?></label><br>
-        <br>
-        <textarea cols="100" rows="2" name="twitter-date" id="twitter-text"><?php if ( isset ( $salud_twitter_meta['twitter-date'] ) ) echo $salud_twitter_meta['twitter-date'][0]; ?></textarea>
-    </p>
-        <p>
-        <label for="twitter-url" class=""><?php _e( '<b>Tweetchat URL:</b>', 'salud-textdomain' )?></label><br>
-        <br>
-        <textarea cols="100" rows="2" name="twitter-url" id="twitter-text"><?php if ( isset ( $salud_twitter_meta['twitter-url'] ) ) echo $salud_twitter_meta['twitter-url'][0]; ?></textarea>
+        <textarea cols="50" rows="1" name="slideshow-shortcode" id="slideshow-shortcode"><?php if ( isset ( $jmo_slideshow_shortcode['slideshow-shortcode'] ) ) echo $jmo_slideshow_shortcode['slideshow-shortcode'][0]; ?></textarea>
     </p>
     <?php
 }
@@ -175,28 +165,22 @@ function salud_twitter_meta_callback( $post ) {
  *
  * @param int $post_id Post ID
  */
-function salud_save_twitter_meta( $post_id ) {
+function save_slideshow_meta( $post_id ) {
     // Checks save status
     $is_autosave = wp_is_post_autosave( $post_id );
     $is_revision = wp_is_post_revision( $post_id );
-    $is_valid_nonce = ( isset( $_POST[ 'utPress_nonce' ] ) && wp_verify_nonce( $_POST[ 'utPress_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+    $is_valid_nonce = ( isset( $_POST[ 'jmo_nonce' ] ) && wp_verify_nonce( $_POST[ 'jmo_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
  
     // Exits script depending on save status
     if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
         return;
     }
  
-    if ( isset( $_POST[ 'twitter-text' ] ) ) {
-        update_post_meta( $post_id, 'twitter-text', sanitize_text_field( $_POST[ 'twitter-text' ] ) );
-    }
-    if ( isset( $_POST[ 'twitter-date' ] ) ) {
-        update_post_meta( $post_id, 'twitter-date', sanitize_text_field( $_POST[ 'twitter-date' ] ) );
-    }
-    if ( isset( $_POST[ 'twitter-url' ] ) ) {
-        update_post_meta( $post_id, 'twitter-url', sanitize_text_field( $_POST[ 'twitter-url' ] ) );
+    if ( isset( $_POST[ 'slideshow-shortcode' ] ) ) {
+        update_post_meta( $post_id, 'slideshow-shortcode', sanitize_text_field( $_POST[ 'slideshow-shortcode' ] ) );
     }
 }
-add_action( 'save_post', 'salud_save_twitter_meta' );
+add_action( 'save_post', 'save_slideshow_meta' );
 
 /**END OF CUSTOM META BOX FOR featured-page-featured-image **/
 
