@@ -21,9 +21,9 @@
 	</article>
  <?php endwhile;?>
 
-<section id="blog" class="roomy blue-bleed side-graphic">
+<section class="roomy blue-bleed side-graphic">
 	<div class="center">
-		<h2 class="far white">Featured Weddings</h2>
+		<h2 class="white">Featured Weddings</h2>
 	</div>
 	<div class="grid-container">
 		<div class="grid-x grid-margin-x">
@@ -44,9 +44,9 @@
 			?>
 		</div>
 	</div>
-	<div class="center roomy"><a class="outline-button-white large" href="<?php echo get_site_url(); ?>/?post_type=post">Contact Us!</a></div>
+	<div class="center less-roomy"><a class="outline-button-white large" href="<?php echo get_site_url(); ?>/?post_type=post">Contact Us!</a></div>
 </section>
-<section id="portfolio" class="">
+<section>
 	<div class="grid-container roomy">
 		<div class="grid-x grid-margin-x far">
 			<?php echo $second_editor; ?>

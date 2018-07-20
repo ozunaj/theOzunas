@@ -34,6 +34,9 @@ $dark-red: #022A35;
 $dark-blue: #265B6A;
 $dark-green: #022A35;
 
+.footer-ozuna h1, .footer-ozuna h2, .footer-ozuna h3, {
+	color:white;
+}
 
 .dark-red{color: $dark-red;}
 .dark-blue{color: $dark-blue;}
@@ -404,4 +407,39 @@ hr.light{
 .button:hover, .button:focus { 
 	color:white;
 	background-color:black;
+}
+.pagination a {
+    text-align: center;
+}
+.pagination li {
+    color: #32748b;
+    font-family: Catamaran,Helvetica;
+    font-weight: 700;
+    font-size: 22px;
+    display: inline-block;
+    padding: 0;
+    background: white;
+    border-radius: 50%;
+    width: 37px;
+}
+.pagination li:hover {
+    color: #32748b;
+    font-family: Catamaran,Helvetica;
+    font-weight: 700;
+    font-size: 22px;
+    display: inline-block;
+    padding: 0;
+    background: white;
+    border-radius: 50%;
+    width: 37px;
+}
+.pagination li, .pagination li:hover, .pagination a:hover {
+    margin-right: .0625rem;
+    border-radius: 50%; 
+    font-size: 22px;
+
+}
+.pagination li:hover, .pagination a:hover {
+	background-color:#646464;
+	color:white;
 }

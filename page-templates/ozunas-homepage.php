@@ -22,7 +22,7 @@ get_header(); ?>
 	<p>Sorry, no posts matched your criteria.</p>
 	<?php endif; ?>
 </section>
-<section id="blog" class="roomy blue-bleed side-graphic">
+<section class="roomy blue-bleed side-graphic">
 	<div class="center">
 		<h2 class="far white">Featured Weddings</h2>
 	</div>
