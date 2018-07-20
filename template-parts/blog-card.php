@@ -22,7 +22,6 @@
 	?>
 	<div class="all-padding">
     	<h3 class="close"><a class="" href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3><!-- This pulls the title of the post to display -->
-    	<span class="entry-date"><?php echo get_the_date(); ?></span><br>
     	<?php the_excerpt(); ?><!-- This pulls the excerpt of the post to display -->
     	<a class="outline-button-black" href="<?php echo get_permalink(); ?>">View Gallery</a>
     </div>

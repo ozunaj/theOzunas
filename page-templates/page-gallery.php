@@ -44,7 +44,7 @@
 			?>
 		</div>
 	</div>
-	<div class="center less-roomy"><a class="outline-button-white large" href="<?php echo get_site_url(); ?>/?post_type=post">Contact Us!</a></div>
+	<div class="center less-roomy"><a class="outline-button-white large" href="<?php echo get_site_url(); ?>/contact">Contact Us!</a></div>
 </section>
 <section>
 	<div class="grid-container roomy">
