@@ -16,6 +16,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
 		<link rel='stylesheet' href="<?php echo get_template_directory_uri(); ?>/src/assets/fonts/typicons.font/src/font/typicons.min.css" />
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/favicon-16x16.png">
+		<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/site.webmanifest">
+		<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/dist/assets/images/favicons/safari-pinned-tab.svg" color="#507983">
+		<meta name="msapplication-TileColor" content="#2b5797">
+		<meta name="theme-color" content="#ffffff">
 		<?php wp_head(); ?>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-101770605-1"></script>
@@ -29,19 +36,6 @@
 		<!-- End Of Analytics -->
 	</head>
 	<body <?php body_class(); ?>>
-		<script type="text/javascript">
-			$(window).scroll(function() {    
-			    var scroll = $(window).scrollTop();
-
-			    if (scroll >= 10) {
-			        $(".logo").addClass("small-logo");
-			        $(".top-bar-right").addClass("no-margin");
-			    } else {
-			        $(".logo").removeClass("small-logo");
-			        $(".top-bar-right").removeClass("no-margin");
-			    }
-			});
-		</script>
 	<?php do_action( 'foundationpress_after_body' ); ?>
 
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
@@ -50,8 +44,8 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
-	<header class="site-header docs-sticky-top-bar" role="banner" data-sticky-container>
-		<div data-sticky data-options="marginTop:0;" style="width:100%">
+	<header class="site-header">
+		<div>
 			<div class="mobile-logo show-for-small-only center"><a href="<?php echo get_option('home'); ?>"/><img src='<?php jmo_display_logo(); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a></div>
 			<div class="site-title-bar title-bar" <?php foundationpress_title_bar_responsive_toggle() ?>>
 				<div class="title-bar-left">
@@ -62,10 +56,10 @@
 			<nav class="site-navigation top-bar" role="navigation">
 				<div class="top-bar-left">
 					<div class="site-desktop-title top-bar-title">
-						<a href="<?php echo get_option('home'); ?>"/><img class="large-offset-3 logo" src='<?php jmo_display_logo(); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
+						<a href="<?php echo get_option('home'); ?>"/><img class="large-offset-3 logo small-logo" src='<?php jmo_display_logo(); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
 					</div>
 				</div>
-				<div class="top-bar-right">
+				<div class="top-bar-right no-margin">
 					<?php foundationpress_top_bar_r(); ?>
 
 					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>

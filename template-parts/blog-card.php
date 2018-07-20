@@ -15,7 +15,7 @@
 	if (function_exists('display_featured_media')) {
 	    display_featured_media('medium');
 	} elseif ( has_post_thumbnail() ){
-	   	the_post_thumbnail();
+	   	the_post_thumbnail('medium');
 	}else{
 		echo 'Please install UT Featured Video Plugin';
 	}
