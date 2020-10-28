@@ -34,10 +34,16 @@ $dark-red: #022A35;
 $dark-blue: #265B6A;
 $dark-green: #022A35;
 
-.footer-ozuna h1, .footer-ozuna h2, .footer-ozuna h3, {
+.footer-ozuna h1, .footer-ozuna h2, .footer-ozuna h3 {
 	color:white;
 }
-
+.footer-container a {
+	color: white;
+}
+.footer-container a:hover, .footer-container a:focus {
+	color: white;
+	text-decoration: underline;
+}
 .dark-red{color: $dark-red;}
 .dark-blue{color: $dark-blue;}
 .dark-green{color: $dark-green;}
